@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import InfiniteCalendar from 'react-infinite-calendar';
+
+import 'react-infinite-calendar/styles.css';
 import './App.css';
 
 class App extends Component {
+  testing() {
+    <InfiniteCalendar
+      width={400}
+      height={600}
+      selected={new Date()}
+      disabledDays={[0,6]}
+      onSelect={(data) => alert(data)}
+    />
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <input type="text" onClick={() => this.testing()} />
       </div>
     );
   }
